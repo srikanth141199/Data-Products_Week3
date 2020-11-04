@@ -1,0 +1,26 @@
+---
+title: "Developing Data Products Week 3 Assignment"
+author: "K S SRIKANTH"
+date: "04/11/2020"
+output: html_document
+---
+
+## Variation of Miles per Gallon with respect to some characteristics of the car.
+```{r}
+library(plotly)
+data(mtcars)
+head(mtcars)
+```
+```{r}
+plot_ly(mtcars) %>%
+    add_trace(x = ~mpg, y = ~cyl, type="scatter", mode = "markers",name = "cylinder", legendgroup = "cylinder", 
+              marker = list(color = "#52A9BD")) %>%
+    add_trace(x = ~mpg, y = ~gear, type="scatter", mode = "markers",
+              name = "gear", legendgroup = "gear", 
+              marker = list(color = "#FFF16B")) %>%
+    add_trace(x = ~mpg, y = ~carb, type="scatter", mode = "markers",
+              name = "carb", legendgroup = "carb", 
+              marker = list(color = "#F5677D")) 
+```
+
+
